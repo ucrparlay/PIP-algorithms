@@ -24,11 +24,18 @@ ITEM_TEST := $(ITEM_TEST:%=test_%)
 ITERM_EXEC := $(ITEM_TEST:test_%=bin/%.test)
 
 
-.PHONY : test build clean $(ITEM_TEST)
+.PHONY : test list build clean $(ITEM_TEST)
 
 test : $(ITEM_TEST)
 
 build : $(ITERM_EXEC)
+
+list :
+	@echo 'Available Tests:'
+	@for name in $(ITEM_TEST);\
+	do\
+		echo $$name;\
+	done 
 
 clean :
 	@-rm -r depend/*
