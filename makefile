@@ -16,7 +16,7 @@ CFLAGS := $(CFLAGS_BASE) $(CFLAGS_CILK) $(CFLAGS_OPT)
 CXXFLAGS := $(CFLAGS) -std=c++11
 
 ########### Change the test cases here ###########
-ITEM_SRC = scan.cpp filter.cpp listRanking.C listRanking3.C
+ITEM_SRC = scan.cpp filter.cpp listRanking-pbbs.C listRanking-pip.C treeContraction-pbbs.C treeContraction-pip.C
 ##################################################
 ITEM_TEST := $(ITEM_SRC:%.C=%)
 ITEM_TEST := $(ITEM_TEST:%.cpp=%)
